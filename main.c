@@ -96,12 +96,8 @@ int main(int argc, char *argv[]) {
     }
 
     struct dirent *entry;
-
     while ((entry = readdir(dir)) != NULL) {
-        if (show_all &&
-            (!show_all ||
-             strcmp(entry->d_name, ".") == 0 ||
-             strcmp(entry->d_name, "..") == 0))
+        if (!show_all && entry->d_name[0] == '.')
             continue;
 
         if (long_format) {
@@ -110,7 +106,6 @@ int main(int argc, char *argv[]) {
             printf("%s\n", entry->d_name);
         }
     }
-
     closedir(dir);
 
     return 0;

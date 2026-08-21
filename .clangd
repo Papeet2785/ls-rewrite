@@ -1,0 +1,6 @@
+CompileFlags:
+  Compiler: clang
+  Add:
+    - -std=gnu17
+    - -Wall
+    - -Wextra
