@@ -1,10 +1,8 @@
 {
   description = "C development environment";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
-
   outputs = { nixpkgs, ... }:
     let
       system = "x86_64-linux";
